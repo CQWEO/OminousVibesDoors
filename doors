@@ -11,8 +11,8 @@ local f=game:GetService"VirtualInputManager"
 
 
 
-local g="Doors"
-local h="Hotel v5.3"
+local g="Door"
+local h="Hotel Mobile"
 local i="TerminalVibes/doors"
 local j="hotel"
 
@@ -1798,15 +1798,15 @@ ag:AddToggle(
 ):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="LeftShift"})
 ag:AddSlider(
 "character.sprint.speed",
-{Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=0,Rounding=1,Suffix=" studs"}
+{Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=6.5,Rounding=1,Suffix=" studs"}
 )
 ag:AddToggle(
 "character.glow.enabled",
-{Text="Body Glow",Default=false,Tooltip="Adds a subtle glow for better vision"}
+{Text="Body Glow",Default=true,Tooltip="Adds a subtle glow for better vision"}
 )
 ag:AddSlider(
 "character.glow.brightness",
-{Text="Glow Brightness",Min=0,Max=100,Default=0,Rounding=0,Suffix=""}
+{Text="Glow Brightness",Min=0,Max=100,Default=100,Rounding=0,Suffix=""}
 )
 end
 
@@ -1814,24 +1814,24 @@ do
 local ag=af:AddLeftGroupbox"Gameplay Mods"
 ag:AddToggle("gameplay.heartbeat.enabled",{
 Text="Automated Heartbeat",
-Default=false,
+Default=true,
 Tooltip="Automatically does Heartbeat inputs for you. (Room 50 & 100)",
 })
 ag:AddToggle("gameplay.parser.enabled",{
 Text="Library Code",
-Default=false,
+Default=true,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
 }):AddKeyPicker("gameplay.parser.keybind",{
-Default="P",
+Default="Q",
 NoUI=true,
 Mode="Toggle",
 })
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
-Default=false,
+Default=true,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
 }):AddKeyPicker("gameplay.breaker.keybind",{
-Default="B",
+Default="R",
 NoUI=true,
 Mode="Toggle",
 })
@@ -1875,11 +1875,11 @@ do
 local ag=af:AddLeftGroupbox"Auto Loot"
 ag:AddToggle("auto-loot.enabled",{
 Text="Enabled",
-Default=false,
+Default=true,
 Tooltip="Automatically loots items for you.",
 }):AddKeyPicker("auto-loot.keybind",{
 Text="Auto-loot",
-Default="F",
+Default="E",
 })
 ag:AddDropdown("auto-loot.filter",{
 Text="Loot Filter (Work In Progress)",
@@ -1895,12 +1895,12 @@ do
 local ag=af:AddLeftGroupbox"Entity Hooks"
 ag:AddToggle("blatant.timothy.remove",{
 Text="Remove Timothy",
-Default=false,
+Default=true,
 Tooltip="Timothy will no longer jumpscare you (You will still take damage).",
 })
 ag:AddToggle("blatant.screech.remove",{
 Text="Remove Screech",
-Default=false,
+Default=true,
 Tooltip="Screech will no longer spawn for you.",
 })
 end
@@ -1960,7 +1960,7 @@ end
 
 local ai=ag:AddTab"Object ESP"
 do
-ai:AddToggle("esp.door.enabled",{Text="Door ESP",Default=false,Tooltip="ESP for doors"})
+ai:AddToggle("esp.door.enabled",{Text="Door ESP",Default=true,Tooltip="ESP for doors"})
 :AddColorPicker("esp.door.default-color",{
 Title="Other Doors ESP Color",
 Default=Color3.new(0,0.3,0.75),
@@ -1971,7 +1971,7 @@ Default=Color3.new(0,1,0),
 })
 ai:AddToggle(
 "esp.wardrobe.enabled",
-{Text="Wardrobe ESP",Default=false,Tooltip="ESP for Wardrobe"}
+{Text="Wardrobe ESP",Default=true,Tooltip="ESP for Wardrobe"}
 ):AddColorPicker("esp.wardrobe.color",{
 Title="Wardrobe ESP Color",
 Default=Color3.new(0,1,0.9),
