@@ -28,6 +28,14 @@ local n={
 ["Lighter"]=true,
 ["Battery"]=true,
 ["Bandage"]=true,
+["Crucifix"]=true,
+["CrucifixWall"]=true,
+["Flashlight"]=true,
+["Shakelight"]=true,
+["Scanner"]=true,
+["HolyGrendy"]=true,
+["ShieldMini"]=true,
+["ShieldBig"]=true,
 }
 
 
@@ -1656,6 +1664,14 @@ elseif aj=="Battery"then
 Q.new(ah,"Batteries")
 elseif aj=="CrucifixWall"then
 Q.new(ah,"Crucifix")
+elseif aj="Crucifix"then
+Q.new(ah,"Crucifix")
+elseif aj="Shakelight"then
+Q.new(ah,"GummyLight")
+elseif aj="Flashlight"then
+Q.new(ah,"Flashlight")
+elseif aj="Scanner"then
+Q.new(ah,"Scanner")
 elseif aj=="ChestBox"then
 P.new(ah,"Chest")
 elseif aj=="ChestBoxLocked"then
@@ -1682,9 +1698,11 @@ if ak=="Hitbox"then
 Q.new(ah,"Key")
 end
 elseif ak=="Wardrobe"then
-O.new(ah,ag.id)
+if ak=="Hitbox"then
+O.new(ah,"Wardrobe")
 elseif ak=="Toolshed"then
-O.new(ah,ag.id)
+if ak=="Hitbox"then
+O.new(ah,"Toolshed")
 elseif ak=="Hitbox"then
 if aj=="GoldPile"then
 R.new(ah)
@@ -1795,7 +1813,7 @@ local ag=af:AddLeftGroupbox"Character Mods"
 ag:AddToggle(
 "character.sprint.enabled",
 {Text="Sprint Enabled",Default=false,Tooltip="Enables Sprinting by pressing the Keybind"}
-):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="LeftShift"})
+):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="LeftControl"})
 ag:AddSlider(
 "character.sprint.speed",
 {Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=6.5,Rounding=1,Suffix=" studs"}
@@ -1821,19 +1839,11 @@ ag:AddToggle("gameplay.parser.enabled",{
 Text="Library Code",
 Default=true,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
-}):AddKeyPicker("gameplay.parser.keybind",{
-Default="Q",
-NoUI=true,
-Mode="Toggle",
 })
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
 Default=true,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
-}):AddKeyPicker("gameplay.breaker.keybind",{
-Default="R",
-NoUI=true,
-Mode="Toggle",
 })
 end
 
