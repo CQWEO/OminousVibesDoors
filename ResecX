@@ -1821,7 +1821,10 @@ Text="Breaker Code",
 Default=false,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
 }):AddKeyPicker("gameplay.breaker.keybind",{
-Default="B",})
+Default="B",
+NoUI=false,
+Mode="Toggle",
+})
 end
 
 do
@@ -1853,7 +1856,8 @@ ai:AddToggle(
 {Text="Entity Alerts",Default=true,Tooltip="Enabled alerts about entities spawning."}
 ):AddKeyPicker("alerts.entity.keybind",{
 Text="Notifier Event",
-Default="V",})
+Default="V",
+})
 end
 end
 
