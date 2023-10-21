@@ -1685,7 +1685,8 @@ elseif aj=="KeyObtain"then
 if ak=="Hitbox"then
 Q.new(ah,"Key")
 end
-elseif aj=="Wardrobe"then
+elseif ak=="Wardrobe" or "Toolshed"then
+if aj=="Wardrobe"then
 O.new(ah,"Wardrobe")
 elseif aj=="Toolshed"then
 O.new(ah,"Toolshed")
