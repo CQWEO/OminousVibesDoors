@@ -1822,13 +1822,15 @@ Text="Library Code",
 Default=false,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
 }):AddKeyPicker("gameplay.parser.keybind",{
-Default="L"})
+Default="L"}
+)
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
 Default=false,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
 }):AddKeyPicker("gameplay.breaker.keybind",{
-Default="B"})
+Default="P"}
+)
 end
 
 do
