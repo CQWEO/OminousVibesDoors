@@ -55,7 +55,7 @@ end
 
 local o="https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/"
 
-local p=loadstring(game:HttpGet(o.."Library.lua"))()
+local p=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing/main/Gui%20Lib%20%5BLibrary%5D"))()
 local q=loadstring(game:HttpGet(o.."addons/SaveManager.lua"))()
 local r=loadstring(game:HttpGet(o.."addons/ThemeManager.lua"))()
 
@@ -1342,11 +1342,11 @@ aq.PointC=al(_.X,_.Y)
 aq.PointD=al(Z.X,Z.Y)
 aq.Color=Options["esp.wardrobe.color"].Value
 if ao.occupant.Value then
-aq.Transparency=0.10
+aq.Transparency=1
 elseif x.LatestRoom.Value-ao.id>1 then
-aq.Transparency=0.25
+aq.Transparency=2.5
 else
-aq.Transparency=0.60
+aq.Transparency=6
 end
 aq.Visible=true
 else
@@ -1788,7 +1788,7 @@ local ag=af:AddLeftGroupbox"Character Mods"
 ag:AddToggle(
 "character.sprint.enabled",
 {Text="Sprint Enabled",Default=false,Tooltip="Enables Sprinting by pressing the Keybind"}
-):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="G"})
+):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="G",})
 ag:AddSlider(
 "character.sprint.speed",
 {Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=0,Rounding=1,Suffix=" studs"}
@@ -1815,13 +1815,13 @@ Text="Library Code",
 Default=false,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
 }):AddKeyPicker("gameplay.parser.keybind",{
-Default="P"})
+Default="P",})
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
 Default=false,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
 }):AddKeyPicker("gameplay.breaker.keybind",{
-Default="B"})
+Default="B",})
 end
 
 do
@@ -1853,7 +1853,7 @@ ai:AddToggle(
 {Text="Entity Alerts",Default=true,Tooltip="Enabled alerts about entities spawning."}
 ):AddKeyPicker("alerts.entity.keybind",{
 Text="Notifier Event",
-Default="V"})
+Default="V",})
 end
 end
 
