@@ -11,8 +11,8 @@ local f=game:GetService"VirtualInputManager"
 
 
 
-local g="Doors"
-local h="Hotel v5.3"
+local g="Section Hub"
+local h="Hotel v1.5"
 local i="TerminalVibes/doors"
 local j="hotel"
 
@@ -62,7 +62,7 @@ end
 
 local o="https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/"
 
-local p=loadstring(game:HttpGet(o.."Library.lua"))()
+local p=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing/main/Gui%20Lib%20%5BLibrary%5D""))()
 local q=loadstring(game:HttpGet(o.."addons/SaveManager.lua"))()
 local r=loadstring(game:HttpGet(o.."addons/ThemeManager.lua"))()
 
@@ -1656,6 +1656,10 @@ elseif aj=="Battery"then
 Q.new(ah,"Batteries")
 elseif aj=="CrucifixWall"then
 Q.new(ah,"Crucifix")
+elseif aj=="CrucifixWall"then
+Q.new(ah,"Crucifix")
+elseif aj=="SkeletonKey"then
+Q.new(ah,"Key Skeleton")
 elseif aj=="ChestBox"then
 P.new(ah,"Chest")
 elseif aj=="ChestBoxLocked"then
@@ -1682,9 +1686,9 @@ if ak=="Hitbox"then
 Q.new(ah,"Key")
 end
 elseif ak=="Wardrobe"then
-O.new(ah,ag.id)
+O.new(ah,"Wardrobe")
 elseif ak=="Toolshed"then
-O.new(ah,ag.id)
+O.new(ah,"Toolshed")
 elseif ak=="Hitbox"then
 if aj=="GoldPile"then
 R.new(ah)
@@ -1692,7 +1696,7 @@ end
 end
 
 
-if ag.id~=52 and ah:IsA"ProximityPrompt"then
+if ag.id~=52 and ah:IsA"ProximityPromptService"then
 local al=s.new()
 ag._maid:add(al)
 
@@ -1795,7 +1799,7 @@ local ag=af:AddLeftGroupbox"Character Mods"
 ag:AddToggle(
 "character.sprint.enabled",
 {Text="Sprint Enabled",Default=false,Tooltip="Enables Sprinting by pressing the Keybind"}
-):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="LeftShift"})
+):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="H"})
 ag:AddSlider(
 "character.sprint.speed",
 {Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=0,Rounding=1,Suffix=" studs"}
@@ -1822,19 +1826,13 @@ Text="Library Code",
 Default=false,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
 }):AddKeyPicker("gameplay.parser.keybind",{
-Default="P",
-NoUI=true,
-Mode="Toggle",
-})
+Default="L"})
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
 Default=false,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
 }):AddKeyPicker("gameplay.breaker.keybind",{
-Default="B",
-NoUI=true,
-Mode="Toggle",
-})
+Default="B"})
 end
 
 do
@@ -1879,7 +1877,7 @@ Default=false,
 Tooltip="Automatically loots items for you.",
 }):AddKeyPicker("auto-loot.keybind",{
 Text="Auto-loot",
-Default="F",
+Default="J",
 })
 ag:AddDropdown("auto-loot.filter",{
 Text="Loot Filter (Work In Progress)",
@@ -2023,24 +2021,7 @@ do
 local af=ae:AddTab"Credits"
 
 local ag=af:AddLeftGroupbox"Credits"
-ag:AddLabel"TerminalVibes - Creator"
-ag:AddLabel"Inori @v3rm - UI Library"
-ag:AddDivider()
-ag:AddLabel"Contributors:"
-ag:AddLabel"> IAmAGoodScammer @v3rm"
-ag:AddLabel"> brickmane @v3rm"
-ag:AddLabel"> yuuiz#1336 @Discord"
-ag:AddDivider()
-ag:AddLabel"Donators:"
-ag:AddLabel"> reversing#2937 @Discord"
-
-local ah=af:AddRightGroupbox"Socials"
-ah:AddButton{
-Text="Discord Server",
-Func=function()
-setclipboard"https://discord.gg/8PATx7UKXZ"
-end,
-}
+ag:AddLabel"Creative By Retove"
 end
 
 do
@@ -2066,9 +2047,6 @@ ag:AddLabel"Menu bind":AddKeyPicker("MenuKeybind",{Default="End",NoUI=true,Text=
 
 ag:AddToggle("Keybinds",{Text="Show Keybinds Menu",Default=true}):OnChanged(function()
 p.KeybindFrame.Visible=Toggles.Keybinds.Value
-end)
-ag:AddToggle("Watermark",{Text="Show Watermark",Default=true}):OnChanged(function()
-p:SetWatermarkVisibility(Toggles.Watermark.Value)
 end)
 end
 end
@@ -2116,7 +2094,7 @@ D:add(e.ChildAdded:Connect(ag))
 local ah=function()
 if Toggles["blatant.screech.remove"].Value then
 ab(Toggles["alerts.debug"],{
-message="Screech was eaten by TerminalVibes",
+message="Screech Disable",
 duration=4,
 })
 task.wait(1)
