@@ -2018,13 +2018,6 @@ end
 end
 
 do
-local af=ae:AddTab"Credits"
-
-local ag=af:AddLeftGroupbox"Credits"
-ag:AddLabel"Creative By Retove"
-end
-
-do
 local af=ae:AddTab"Settings"
 
 r:SetLibrary(p)
