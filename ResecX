@@ -1815,7 +1815,10 @@ Text="Library Code",
 Default=false,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
 }):AddKeyPicker("gameplay.parser.keybind",{
-Default="P",})
+Default="P",
+NoUI=false,
+Mode="Toggle",
+})
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
 Default=false,
