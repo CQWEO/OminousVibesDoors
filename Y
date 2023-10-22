@@ -1858,7 +1858,7 @@ end
 
 
 
-s:SetWatermark"Linoria Community (TerminalVibes)"
+s:SetWatermark"You Hub 1.0"
 s:Notify"Loading UI..."
 
 do
@@ -1872,7 +1872,7 @@ local ag=af:AddLeftGroupbox"Character Mods"
 ag:AddToggle(
 "character.sprint.enabled",
 {Text="Sprint Enabled",Default=false,Tooltip="Enables Sprinting by pressing the Keybind"}
-):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="LeftShift"})
+):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="G"})
 ag:AddSlider(
 "character.sprint.speed",
 {Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=0,Rounding=1,Suffix=" studs"}
@@ -1900,7 +1900,7 @@ Default=false,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
 }):AddKeyPicker("gameplay.parser.keybind",{
 Default="P",
-NoUI=true,
+NoUI=false,
 Mode="Toggle",
 })
 ag:AddToggle("gameplay.breaker.enabled",{
@@ -1909,7 +1909,7 @@ Default=false,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
 }):AddKeyPicker("gameplay.breaker.keybind",{
 Default="B",
-NoUI=true,
+NoUI=false,
 Mode="Toggle",
 })
 end
@@ -1931,6 +1931,9 @@ aj:AddToggle("alerts.audio.enabled",{
 Text="Enable Sound",
 Default=true,
 Tooltip="Plays a sound when an important alert is triggered.",
+}):AddKeyPicker("alerts.audio.enabled.keybind",{
+Text="Enable-Sound",
+Default="N",
 })
 aj:AddSlider(
 "alerts.audio.volume",
@@ -1955,7 +1958,10 @@ ak:AddToggle(
 ak:AddToggle(
 "alerts.entity",
 {Text="Entity Alerts",Default=true,Tooltip="Enabled alerts about entities spawning."}
-)
+):AddKeyPicker("alerts.entity.keybind",{
+Text="Auto-Event",
+Default="V",
+})
 end
 end
 
