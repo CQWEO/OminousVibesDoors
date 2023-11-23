@@ -1379,9 +1379,9 @@ as.Color=Options["esp.wardrobe.color"].Value
 if aq.occupant.Value then
 as.Transparency=0.10
 elseif A.LatestRoom.Value-aq.id>1 then
-as.Transparency=0.25
+as.Transparency=0.65
 else
-as.Transparency=0.60
+as.Transparency=1
 end
 as.Visible=true
 else
@@ -1858,7 +1858,6 @@ end
 
 
 
-s:SetWatermark"Linoria Community (TerminalVibes)"
 s:Notify"Loading UI..."
 
 do
@@ -1934,7 +1933,7 @@ Tooltip="Plays a sound when an important alert is triggered.",
 })
 aj:AddSlider(
 "alerts.audio.volume",
-{Text="Alert Volume",Min=1,Max=10,Default=6,Rounding=0,Suffix=""}
+{Text="Alert Volume",Min=1,Max=10,Default=1,Rounding=0,Suffix=""}
 )
 aj:AddButton{
 Text="Test Alert",
@@ -1973,7 +1972,7 @@ Text="Auto-Interact",
 Default="F",
 })
 ag:AddDropdown("interact.filter",{
-Text="Interact Filter (Work In Progress)",
+Text="Interact Filter",
 Tooltip="Selected items will be ignored by the auto-loot.",
 
 Values={
@@ -2051,14 +2050,14 @@ Default=Color3.new(1,0,0),
 })
 :AddColorPicker("esp.rush.ambush-color",{
 Title="Ambush ESP Color",
-Default=Color3.new(0,1,0),
+Default=Color3.new(1,0,0),
 })
 aj:AddToggle(
 "esp.figure.enabled",
 {Text="Figure ESP",Default=true,Tooltip="ESP for the Figure entity"}
 ):AddColorPicker("esp.figure.color",{
 Title="Figure ESP Color",
-Default=Color3.new(0.75,0.25,0.25),
+Default=Color3.new(1,0,0),
 })
 aj
 :AddToggle(
@@ -2076,18 +2075,18 @@ do
 ak:AddToggle("esp.door.enabled",{Text="Door ESP",Default=false,Tooltip="ESP for doors"})
 :AddColorPicker("esp.door.default-color",{
 Title="Other Doors ESP Color",
-Default=Color3.new(0,0.3,0.75),
+Default=Color3.new(1,1,1),
 })
 :AddColorPicker("esp.door.target-color",{
 Title="Current Door ESP Color",
-Default=Color3.new(0,1,0),
+Default=Color3.new(1,1,1),
 })
 ak:AddToggle(
 "esp.wardrobe.enabled",
 {Text="Wardrobe ESP",Default=false,Tooltip="ESP for Wardrobe"}
 ):AddColorPicker("esp.wardrobe.color",{
 Title="Wardrobe ESP Color",
-Default=Color3.new(0,1,0.9),
+Default=Color3.new(1,1,1),
 })
 ak:AddToggle(
 "esp.interactable.enabled",
@@ -2101,7 +2100,7 @@ ak:AddToggle(
 {Text="Obtainable ESP",Default=true,Tooltip="ESP for items that can be picked up"}
 ):AddColorPicker("esp.obtainable.color",{
 Title="Obtainable ESP Color",
-Default=Color3.new(1,1,0),
+Default=Color3.new(1,1,1),
 })
 end
 end
