@@ -90,7 +90,7 @@ end
 
 local r="https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/"
 
-local s=loadstring(game:HttpGet(r.."Library.lua"))()
+local s=loadstring(game:HttpGet("https://raw.githubusercontent.com/CQWEO/GuiCQWEO/patch-8/Gui Lib %5BLibrary%5D"))()
 local t=loadstring(game:HttpGet(r.."addons/SaveManager.lua"))()
 local u=loadstring(game:HttpGet(r.."addons/ThemeManager.lua"))()
 
@@ -1377,7 +1377,7 @@ as.PointC=an(_.X,_.Y)
 as.PointD=an(aw.X,aw.Y)
 as.Color=Options["esp.wardrobe.color"].Value
 if aq.occupant.Value then
-as.Transparency=0.10
+as.Transparency=0.50
 elseif A.LatestRoom.Value-aq.id>1 then
 as.Transparency=0.65
 else
