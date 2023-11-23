@@ -12,10 +12,10 @@ local g=game:GetService"VirtualInputManager"
 
 
 
-local h="Doors"
-local i="Hotel v5.4"
-local j="TerminalVibes/doors"
-local k="hotel"
+local h="YOU HUB"
+local i="v1.5"
+local j="Script"
+local k="Beta"
 
 local l={[6839171747]=5938}
 
@@ -90,7 +90,7 @@ end
 
 local r="https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/"
 
-local s=loadstring(game:HttpGet(r.."Library.lua"))()
+local s=loadstring(game:HttpGet("https://raw.githubusercontent.com/KINGHUB01/BlackKing/main/Gui%20Lib%20%5BLibrary%5D"))()
 local t=loadstring(game:HttpGet(r.."addons/SaveManager.lua"))()
 local u=loadstring(game:HttpGet(r.."addons/ThemeManager.lua"))()
 
@@ -1858,7 +1858,7 @@ end
 
 
 
-s:SetWatermark"Linoria Community (TerminalVibes)"
+s:SetWatermark"YOU HUB | v1.5"
 s:Notify"Loading UI..."
 
 do
@@ -1872,7 +1872,7 @@ local ag=af:AddLeftGroupbox"Character Mods"
 ag:AddToggle(
 "character.sprint.enabled",
 {Text="Sprint Enabled",Default=false,Tooltip="Enables Sprinting by pressing the Keybind"}
-):AddKeyPicker("character.sprint.keybind",{Text="Sprint",Default="LeftShift"})
+)
 ag:AddSlider(
 "character.sprint.speed",
 {Text="Sprint Boost (in seconds)",Min=0,Max=7.5,Default=0,Rounding=1,Suffix=" studs"}
@@ -1890,7 +1890,7 @@ end
 do
 local ag=af:AddLeftGroupbox"Gameplay Mods"
 ag:AddToggle("gameplay.heartbeat.enabled",{
-Text="Automated Heartbeat",
+Text="No Heartbeat Minigame",
 Default=false,
 Tooltip="Automatically does Heartbeat inputs for you. (Room 50 & 100)",
 })
@@ -1898,19 +1898,11 @@ ag:AddToggle("gameplay.parser.enabled",{
 Text="Library Code",
 Default=false,
 Tooltip="Automatically parses the Library padlock code as you obtain clues. (Paper & Hints required)",
-}):AddKeyPicker("gameplay.parser.keybind",{
-Default="P",
-NoUI=true,
-Mode="Toggle",
 })
 ag:AddToggle("gameplay.breaker.enabled",{
 Text="Breaker Code",
 Default=false,
 Tooltip="Notifies you of Electrical Breaker code when it generates.",
-}):AddKeyPicker("gameplay.breaker.keybind",{
-Default="B",
-NoUI=true,
-Mode="Toggle",
 })
 end
 
@@ -1968,9 +1960,6 @@ ag:AddToggle("interact.enabled",{
 Text="Enabled",
 Default=false,
 Tooltip="Automatically loots items for you.",
-}):AddKeyPicker("interact.keybind",{
-Text="Auto-Interact",
-Default="F",
 })
 ag:AddDropdown("interact.filter",{
 Text="Interact Filter (Work In Progress)",
@@ -2051,14 +2040,14 @@ Default=Color3.new(1,0,0),
 })
 :AddColorPicker("esp.rush.ambush-color",{
 Title="Ambush ESP Color",
-Default=Color3.new(0,1,0),
+Default=Color3.new(1,0,0),
 })
 aj:AddToggle(
 "esp.figure.enabled",
 {Text="Figure ESP",Default=true,Tooltip="ESP for the Figure entity"}
 ):AddColorPicker("esp.figure.color",{
 Title="Figure ESP Color",
-Default=Color3.new(0.75,0.25,0.25),
+Default=Color3.new(1,0,0),
 })
 aj
 :AddToggle(
@@ -2076,18 +2065,11 @@ do
 ak:AddToggle("esp.door.enabled",{Text="Door ESP",Default=false,Tooltip="ESP for doors"})
 :AddColorPicker("esp.door.default-color",{
 Title="Other Doors ESP Color",
-Default=Color3.new(0,0.3,0.75),
+Default=Color3.new(1,1,1),
 })
 :AddColorPicker("esp.door.target-color",{
 Title="Current Door ESP Color",
-Default=Color3.new(0,1,0),
-})
-ak:AddToggle(
-"esp.wardrobe.enabled",
-{Text="Wardrobe ESP",Default=false,Tooltip="ESP for Wardrobe"}
-):AddColorPicker("esp.wardrobe.color",{
-Title="Wardrobe ESP Color",
-Default=Color3.new(0,1,0.9),
+Default=Color3.new(1,1,1),
 })
 ak:AddToggle(
 "esp.interactable.enabled",
@@ -2134,7 +2116,7 @@ end
 do
 local ag=af:AddRightGroupbox"Lighting"
 ag:AddButton{
-Text="Full Bright",
+Text="FullBright",
 Func=function()
 a.Ambient=Color3.fromRGB(200,200,200)
 a.Brightness=1
